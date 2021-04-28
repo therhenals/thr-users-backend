@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 
@@ -7,6 +7,7 @@ import { NedbModule } from '@hungtcs-box/nest-nedb';
 
 @Module({
   imports: [
+    HttpModule,
     NedbModule.forFeature([
       {
         model: UserModel,
