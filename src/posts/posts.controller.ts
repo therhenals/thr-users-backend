@@ -7,13 +7,8 @@ export class PostsController {
         private readonly postsService: PostsService
     ) { }
 
-    @Get('initial')
-    async initialData() {
-        return await this.postsService.initialData();
-    }
-
     @Get(':userId')
-    getByUserId(@Param('userId') userId: string) {
-        this.postsService.getByUserId(userId);
+    async getByUserId(@Param('userId') userId: string) {
+        return await this.postsService.getByUserId(userId);
     }
 }
